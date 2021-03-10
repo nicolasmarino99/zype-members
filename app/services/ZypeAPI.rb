@@ -1,3 +1,7 @@
+require 'uri'
+require 'net/http'
+require 'openssl'
+
 module ZypeAPI
     class Videos
       def self.show_all
@@ -5,7 +9,14 @@ module ZypeAPI
       end
 
       def self.authenticate(username, password)
-        Faraday.get "https://login.zype.com/oauth/token?client_id=#{ENV['CLIENT_ID']}&client_secret=#{ENV['CLIENT_SECRET']}&username=#{username}&password=#{password}&grant_type=password"
+        url = URI("https://login.zype.com/oauth/token?client_id=#{ENV['CLIENT_ID']}&client_secret=#{ENV['CLIENT_SECRET']}&username=#{username}&password=#{password}&grant_type=password")
+        http = Net::HTTP.new(url.host, url.port)
+        http.use_ssl = true
+
+        request = Net::HTTP::Post.new(url)
+        request["Accept"] = 'application/json'
+
+        response = http.request(request).read_body
       end
     end
   end
