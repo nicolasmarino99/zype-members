@@ -2,7 +2,7 @@
 
 <div>
     <% @response.each do |video|%>
-        <a href="#">
+        <%= link_to "videos/#{video["_id"]},#{video["purchase_price"].nil? ? 'free' : 'premium'}", {:controller => 'videos', :action => 'show', :param => {"id": video["_id"], "premium?": video["purchase_price"]} } do %>
             <div class="card">
                 <div class="video-thumbnail">
                     <%= image_tag("#{video["thumbnails"][0]["url"]}", :alt => "img") %>
@@ -13,10 +13,16 @@
                     <p><%= video["created_at"] %></p>
                     <div class="channel">
                         <div class="circle"></div>
+                        <%unless video["purchase_price"].nil? %>
+                            <div class="tag">
+                                premium
+                            </div>
+                        <% end %>
                         <p><%= video["categories"].present? ? video["categories"][0]["value"][0] : 'John Doe' %></p>
                     </div>
                 </div>
             </div>
-        </a>
+        <% end %>
     <% end %>
 </div>
+

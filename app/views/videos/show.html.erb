@@ -1,0 +1,8 @@
+<h2>Video specific</h2>
+<%= @id %>
+<% if @premium == "premium" %>
+    <%= render 'sign_up_form' %>
+<% else %>
+    <iframe
+    src="https://player.zype.com/embed/<%= @id %>.html?api_key=roXcCjH-K5sec-d8IrBZ2AEIZttBAHdt3ivLAql6ywT9wytXbVF5xso1o70DgHcr">
+<% end %>
