@@ -17,6 +17,8 @@ module ZypeAPI
         request["Accept"] = 'application/json'
 
         response = http.request(request).read_body
+        p response
+        response
       end
     end
   end

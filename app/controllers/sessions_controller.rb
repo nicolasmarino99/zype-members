@@ -6,8 +6,8 @@ class SessionsController < ApplicationController
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      session[:access_token] = JSON.parse(ZypeAPI::Videos.authenticate(@user.username, @user.password))["access_token"]
-      redirect_to '/welcome'
+      session[:access_token] = JSON.parse(ZypeAPI::Videos.authenticate(@user.username, 'password'))["access_token"]
+      redirect_to "/videos/#{session[:video_id]},#{session[:premium]}"
     else
         redirect_to '/login'
     end

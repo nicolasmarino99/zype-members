@@ -6,6 +6,8 @@ class VideosController < ApplicationController
 
   def show
     @id, @premium = params[:id].split(',')
+    session[:video_id] = @id
+    session[:premium] = @premium
   end
 
   private

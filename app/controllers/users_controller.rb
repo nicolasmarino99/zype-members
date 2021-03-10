@@ -7,6 +7,8 @@ class UsersController < ApplicationController
     @user = User.create(params.require(:user).permit(:username, :password))
     session[:user_id] = @user.id
     session[:access_token] = JSON.parse(ZypeAPI::Videos.authenticate(@user.username, @user.password))["access_token"]
-    redirect_to '/welcome'
+    p "USERUSERUSERUSERUSERUSERUSERUSERUSERUSERUSERUSER"
+    p session[:video_id],session[:premium],session[:access_token]
+    redirect_to "/videos/#{session[:video_id]},#{session[:premium]}"
   end
 end
