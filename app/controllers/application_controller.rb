@@ -1,9 +1,14 @@
 class ApplicationController < ActionController::Base
     helper_method :current_user
+    helper_method :current_user_access_token
     helper_method :logged_in?
 
     def current_user
         User.find_by(id: session[:user_id])
+    end
+
+    def current_user_access_token
+        session[:access_token]
     end
 
     def logged_in?
