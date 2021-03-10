@@ -1,8 +1,6 @@
 <h2>Video specific</h2>
 
 <% if @premium == "premium" && current_user_access_token %>
-    <%= "https://player.zype.com/embed/#{@id}.html?access_
-    token=#{current_user_access_token}"%>
     <iframe
     src="https://player.zype.com/embed/<%= @id %>.html?access_token=<%= current_user_access_token %>">
 <% elsif @premium == "premium" && current_user %>
