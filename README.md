@@ -1,4 +1,4 @@
-# Body builder social appp routine
+# Zype video app (Homework)
 
 a. Explain how the site will function from a broad level. Describe the architecture of
 the app and how it will communicate with Zype's API.
@@ -21,7 +21,10 @@ of the functionality and logic will be. You can use diagrams if you would like.
 
 ## [Live version](https://zype-members.herokuapp.com/)
 
-
+![Alt text](app/assets/images/img1.jpg)
+![Alt text](app/assets/images/img2.jpg) 
+![Alt text](app/assets/images/img3.jpg) 
+![Alt text](app/assets/images/img4.jpg) 
 
 ### Aditional gems
 
