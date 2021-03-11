@@ -1,0 +1,13 @@
+<div class="search-bar">
+    <h1 id="title"><%= link_to "Zype-player", root_path %></h1>
+    <input type="text" name="search" id="search" placeholder="search">
+    <div class="buttons">
+        <%= link_to "Home", root_path %>
+        <%unless current_user %>
+            <%= button_to "Login", '/login', method: :get%>
+            <%= button_to "Sign Up", '/users/new', method: :get%>
+        <%else%>
+            <%= button_to "Logout", '/logout', method: :post%>
+        <%end%>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+.videos {
+    width: 64%;
+    .video-title {
+        font-size: 2.7em;
+        margin: 0;
+        margin-bottom: .7em;
+    }
+    .card {
+        display: flex;
+        align-items: center;
+        background: #252836;
+        border-radius: 17px;
+        height: 12em;
+        margin-bottom: 1em;
+        .video-thumbnail {
+            position: relative;
+            transform: scale(0.7);
+            top: 10%;
+            left: -7%;
+            img {
+                transform: scale(0.9);
+                border-radius: 23px;
+            }
+            p {
+                position: relative;
+                top: -5.7em;
+                left: 22.8em;
+                background: #000000a1;
+                width: 10%;
+                padding: 2%;
+                font-size: 14px;
+                text-align: center;
+                border-radius: 7px;
+                color: #d9d9d9;
+            }
+        }
+        .video-info {
+            align-self: flex-start;
+            position: relative;
+            left: -13%;
+            h2 {
+                font-size: 20px;
+            }
+            .channel {
+                display: flex;
+                align-items: center;
+                flex-direction: row-reverse;
+                justify-content: space-between;
+                .tag {
+                    background: #939300;
+                    padding: 2%;
+                    border-radius: 6px;
+                }
+            }
+        }
+    }
+}
