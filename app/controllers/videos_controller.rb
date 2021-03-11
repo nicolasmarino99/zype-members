@@ -8,7 +8,6 @@ class VideosController < ApplicationController
     @id, @premium = params[:id].split(',')
     session[:video_id] = @id
     session[:premium] = @premium
-    #@response = JSON.parse(ZypeAPI::Videos.show_info(@id).body)["response"]
   end
 
   private
