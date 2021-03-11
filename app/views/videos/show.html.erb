@@ -1,14 +1,14 @@
-<h2>Video specific</h2>
-
-<% if @premium == "premium" && current_user_access_token %>
-    <iframe
-    src="https://player.zype.com/embed/<%= @id %>.html?access_token=<%= current_user_access_token %>">
-<% elsif @premium == "premium" && current_user %>
-    <h1>This video is for premium users</h1>
-<% elsif @premium == "premium" %>
-    <h1>You need to sign up and become a member to see this content</h1>
-    <%= link_to "Login", login_path %>
-<% else %>
-    <iframe
-    src="https://player.zype.com/embed/<%= @id  %>.html?api_key=roXcCjH-K5sec-d8IrBZ2AEIZttBAHdt3ivLAql6ywT9wytXbVF5xso1o70DgHcr">
-<% end %>
+<div class="video">
+    <% if @premium == "premium" && current_user_access_token %>
+        <iframe
+        src="https://player.zype.com/embed/<%= @id %>.html?access_token=<%= current_user_access_token %>">
+    <% elsif @premium == "premium" && current_user %>
+        <h1>This video is for premium users</h1>
+    <% elsif @premium == "premium" %>
+        <h1>You need to sign up and become a member to see this content</h1>
+        <%= link_to "Login", login_path %>
+    <% else %>
+        <iframe
+        src="https://player.zype.com/embed/<%= @id  %>.html?api_key=roXcCjH-K5sec-d8IrBZ2AEIZttBAHdt3ivLAql6ywT9wytXbVF5xso1o70DgHcr">
+    <% end %>
+</div>

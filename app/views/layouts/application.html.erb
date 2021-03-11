@@ -10,6 +10,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="app">
+      <%= render 'static_pages/partials/search_bar'%>
+      <div class="feed">
+        <%= render 'static_pages/partials/side_bar'%>
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
