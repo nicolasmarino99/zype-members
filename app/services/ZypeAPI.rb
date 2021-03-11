@@ -5,15 +5,7 @@ require 'openssl'
 module ZypeAPI
     class Videos
       def self.show_all
-        url = URI("https://api.zype.com/videos?per_page=500&sort=published_at&app_key=#{ENV['APP_KEY']}")
-        http = Net::HTTP.new(url.host, url.port)
-        http.use_ssl = true
-
-        request = Net::HTTP::Post.new(url)
-        request["Accept"] = 'application/json'
-
-        response = http.request(request).read_body
-        response
+        Faraday.get "https://api.zype.com/videos?per_page=500&sort=published_at&app_key=#{ENV['APP_KEY']}"
       end
 
       def self.show_info(video_id)
