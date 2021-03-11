@@ -9,7 +9,7 @@ module ZypeAPI
         http = Net::HTTP.new(url.host, url.port)
         http.use_ssl = true
 
-        request = Net::HTTP::Post.new(url)
+        request = Net::HTTP::Get.new(url)
         request["Accept"] = 'application/json'
 
         response = http.request(request).read_body
