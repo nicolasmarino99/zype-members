@@ -2,7 +2,7 @@ require 'json'
 class VideosController < ApplicationController
   def index
     @response = JSON.parse(ZypeAPI::Videos.show_all)["response"]
-    p JSON.parse(ZypeAPI::Videos.show_all)["response"]
+    p JSON.parse(ZypeAPI::Videos.show_all)
   end
 
   def show
